@@ -35,7 +35,7 @@ function downloadAllImages() {
     Promise.all(promises)
         .then(images => {
             const outputDiv = document.getElementById('output');
-            outputDiv.innerHTML = ''; // Clear the output div
+            outputDiv.innerHTML = 'Images Loaded'; // Clear the output div
 
             // Append each downloaded image to the output div
             images.forEach(img => {
