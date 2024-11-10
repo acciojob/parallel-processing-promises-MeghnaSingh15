@@ -22,7 +22,7 @@ function downloadImage(image) {
 
 // Function to download all images and display them
 function downloadAllImages() {
-    const promises = imageUrls.map(downloadImage);
+    const promises = images.map(downloadImage);
 
     // Use Promise.all to wait for all images to download
     Promise.all(promises)
