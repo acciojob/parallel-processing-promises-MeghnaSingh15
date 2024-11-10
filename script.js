@@ -11,12 +11,19 @@ function downloadImage(image) {
     return new Promise((resolve, reject) => {
         const img = new Image();
         img.src = image.url;
+		console.log('Downloading image', image.url); 
 
         // Resolve the promise when the image loads successfully
-        img.onload = () => resolve(img);
+        img.onload = () => {
+            console.log('Image loaded', image.url);  
+			resolve(img);
+		};
 
         // Reject the promise if the image fails to load
-        img.onerror = () => reject(`Failed to load image's URL: ${image.url}`);
+        img.onerror = () => {
+            console.error('Failed to load image', image.url); 
+			reject(`Failed to load image's URL: ${image.url}`);
+		};
     });
 }
 
